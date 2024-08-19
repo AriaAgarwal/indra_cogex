@@ -511,9 +511,7 @@ def run_explain_downstream_analysis(source_hgnc_ids, target_hgnc_ids, output_pat
     
     shared_pathways_result = shared_pathways_between_gene_sets(source_hgnc_ids,
                                                                target_hgnc_ids)
-    print(shared_pathways_result)
     
-    # FIXME: Is a plain text file the right choice here?
     with open(os.path.join(output_path, "shared_pathways.txt"), "w") as fh:
         fh.write(str(shared_pathways_result))
         
@@ -534,7 +532,6 @@ def run_explain_downstream_analysis(source_hgnc_ids, target_hgnc_ids, output_pat
     # family/complex as the target
     shared_families_result = shared_protein_families_between_gene_sets(target_hgnc_ids, source_hgnc_ids)
    
-    # FIXME: Is a plain text file the right choice here?
     with open(os.path.join(output_path, "shared_families.txt"), "w") as fh:
         fh.write(str(shared_families_result))
     
